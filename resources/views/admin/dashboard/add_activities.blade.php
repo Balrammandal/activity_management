@@ -41,7 +41,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Time</label>
-                                            <input type="text" class="form-control" name="time" placeholder="Enter time">
+                                            <input type="text" class="form-control datetimepicker" name="time" placeholder="Enter time">
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Next Activity Time</label>
-                                            <input type="text" class="form-control" name="next_act_time" placeholder="Enter time">
+                                            <input type="text" class="form-control datetimepicker" name="next_act_time" placeholder="Enter time">
                                         </div>
                                         <div class="form-group">
                                             <label> Next Activity Description</label>

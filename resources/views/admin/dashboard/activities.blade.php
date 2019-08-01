@@ -28,7 +28,7 @@
                             <div class="alert alert-success">{{ Session::get('success') }}</div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
+                            <table id="data_table" class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>S No.</th>

@@ -16,6 +16,8 @@
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="{{url('/')}}/admintheme/assets/js/Lightweight-Chart/cssCharts.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 </head>
 
 <body>
@@ -28,62 +30,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><strong>bluebox</strong></a>
+            <a class="navbar-brand" href=""><strong>bluebox</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-messages">
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Doe</strong>
-                                <span class="pull-right text-muted">
-                                        <em>Today</em>
-                                    </span>
-                            </div>
-                            <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <strong>John Smith</strong>
-                                <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                            </div>
-                            <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="text-center" href="#">
-                            <strong>Read All Messages</strong>
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-messages -->
-            </li>
-
-
             <!-- /.dropdown -->
             <!-- /.dropdown -->
             <li class="dropdown">
@@ -91,20 +41,20 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 @if(Auth::check())
-                <ul class="dropdown-menu dropdown-user">
-                    <li class="divider"></li>
-                    <li><a href="{{route('user_logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-               @endif
+                    <ul class="dropdown-menu dropdown-user">
+                        <li class="divider"></li>
+                        <li><a href="{{route('user_logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                @endif
             </li>
             <!-- /.dropdown -->
         </ul>
     </nav>
     <!--/. NAV TOP  -->
     @if(Auth::check())
-    @include('admin.layouts.leftmenu')
+        @include('admin.layouts.leftmenu')
     @endif
     @yield('content')
     <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p>
@@ -126,20 +76,19 @@
 <!-- Metis Menu Js -->
 <script src="{{url('/')}}/admintheme/assets/js/jquery.metisMenu.js"></script>
 <!-- Morris Chart Js -->
-<script src="{{url('/')}}/admintheme/assets/js/morris/raphael-2.1.0.min.js"></script>
-<script src="{{url('/')}}/admintheme/assets/js/morris/morris.js"></script>
 
-
-<script src="{{url('/')}}/admintheme/assets/js/easypiechart.js"></script>
-<script src="{{url('/')}}/admintheme/assets/js/easypiechart-data.js"></script>
-
-<script src="{{url('/')}}/admintheme/assets/js/Lightweight-Chart/jquery.chart.js"></script>
-
-<!-- Custom Js -->
-<script src="{{url('/')}}/admintheme/assets/js/custom-scripts.js"></script>
-
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script>
-
+    $(document).ready(function() {
+        $('#data_table').DataTable();
+    } );
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker();
+    });
 </script>
 @stack('scripts')
 </body>
